@@ -1,0 +1,93 @@
+# Elixir Basics
+
+## Section
+
+```elixir
+"hello" <> " " <> "world"
+```
+
+```elixir
+String.duplicate("abc", 5)
+```
+
+```elixir
+rem(4, 2) == 0
+round(3.55)
+trunc(5.33)
+```
+
+```elixir
+[1, 2, 3] ++ [4, 5, 6]
+```
+
+```elixir
+[1, 2, 3, 4] -- [2, 4]
+```
+
+```elixir
+list = [1, 2, 3, 4, 5]
+```
+
+```elixir
+hd(list)
+```
+
+```elixir
+tl(list)
+```
+
+```elixir
+String.reverse("Asansol")
+```
+
+```elixir
+String.split("Asansol Engineering College")
+```
+
+```elixir
+String.at("megha", 2)
+```
+
+```elixir
+String.upcase("megha")
+```
+
+```elixir
+String.downcase("MEGHA")
+```
+
+```elixir
+String.contains?("joy of Elixir", "of")
+```
+
+```elixir
+String.duplicate("abc", 5)
+```
+
+```elixir
+add = fn a, b -> a + b end
+```
+
+```elixir
+add.(5, 7)
+```
+
+```elixir
+odd_even = fn n -> rem(n, 2) end
+```
+
+```elixir
+odd_even.(5)
+```
+
+```elixir
+{a, b, c} = {"megha", "tannu", "kriti"}
+```
+
+```elixir
+a
+```
+
+```elixir
+c
+```
