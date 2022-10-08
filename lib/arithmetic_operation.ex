@@ -3,6 +3,11 @@ defmodule  ArithmeticOperation do
   This module checks whether a number is +ve,-ve or zero.
   Returns invalid when input is not a number
   """
+  @doc """
+  Checks if input is integer
+  If yes, calls check_number()
+  If no, returns "Invalid Number"
+  """
   def check(x) when is_integer(x) do
     check_number(x)
   end
@@ -14,6 +19,7 @@ defmodule  ArithmeticOperation do
   defp check_number(x) when x>0 do
     "Positive"
   end
+
 
   defp check_number(x) when x<0  do
     "Negative"
