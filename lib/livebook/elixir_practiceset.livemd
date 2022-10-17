@@ -1,0 +1,139 @@
+# Elixir Basics
+
+## Practice Set
+
+```elixir
+"hello" <> " " <> "world"
+```
+
+```elixir
+data = %{name: "Megha", age: 20}
+```
+
+```elixir
+Map.get(data, :name)
+```
+
+```elixir
+%{age: 20}
+```
+
+```elixir
+%{age: value} = %{name: "Megha", age: 20}
+```
+
+```elixir
+value
+```
+
+```elixir
+{:ok, answer} = {:ok, 1500}
+```
+
+```elixir
+answer
+```
+
+## Matching a List
+
+```elixir
+list = [2, 3, 4]
+```
+
+```elixir
+[1 | list]
+```
+
+```elixir
+[head | tail] = list
+```
+
+```elixir
+head
+```
+
+```elixir
+[head | _] = [1, 2, 3, 4, 5]
+```
+
+```elixir
+tail
+```
+
+```elixir
+[a, b, c | rest] = [2, 3, 4, 5, 66, 7]
+```
+
+```elixir
+b
+```
+
+```elixir
+[] = []
+```
+
+```elixir
+[head | tail] = []
+```
+
+```elixir
+[1 | rest] = [1, 2, 3, 4]
+```
+
+```elixir
+[1 | rest] = [2, 3, 4]
+```
+
+```elixir
+list = [1, 2, 3, 4]
+```
+
+```elixir
+[head | tail] = list
+```
+
+```elixir
+[head] = list
+```
+
+```elixir
+[head] = [1]
+```
+
+```elixir
+[head] = [1, 2]
+```
+
+```elixir
+[a, b | _rest] = [1, 2, 3]
+```
+
+```elixir
+
+```
+
+## Pattern Matching a function Body:Intro
+
+```elixir
+defmodule Data do
+  def find(true) do
+    "Welcome to Hello World"
+  end
+
+  def find(false) do
+    "GoodBye"
+  end
+
+  def find(_) do
+    "Invalid"
+  end
+end
+```
+
+```elixir
+Data.find(true)
+```
+
+```elixir
+Data.find(false)
+```
