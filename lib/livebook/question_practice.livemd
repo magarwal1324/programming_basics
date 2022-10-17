@@ -1,6 +1,6 @@
 # Elixir Basics
 
-## Section
+## Basics Operations
 
 ```elixir
 "hello" <> " " <> "world"
@@ -14,6 +14,14 @@ String.duplicate("abc", 5)
 rem(4, 2) == 0
 round(3.55)
 trunc(5.33)
+```
+
+```elixir
+name = "Megha"
+```
+
+```elixir
+"hello,#{name}"
 ```
 
 ## List
@@ -31,11 +39,51 @@ list = [1, 2, 3, 4, 5]
 ```
 
 ```elixir
+my_list = list ++ [6]
+```
+
+```elixir
+Enum.reverse(my_list)
+```
+
+```elixir
 hd(list)
 ```
 
 ```elixir
 tl(list)
+```
+
+## Tuple
+
+```elixir
+tuple = {1, 2, 3, 4}
+```
+
+```elixir
+elem(tuple, 0)
+```
+
+```elixir
+put_elem(tuple, 2, 5)
+```
+
+```elixir
+tuple_size(tuple)
+```
+
+## Map
+
+```elixir
+%{"name" => "megha", "age" => 20}
+```
+
+```elixir
+detail = %{name: "megha", age: 20}
+```
+
+```elixir
+Map.get(detail, 20)
 ```
 
 ## String
@@ -96,6 +144,46 @@ a
 
 ```elixir
 c
+```
+
+```elixir
+defmodule Math do
+  def sum(a, b) do
+    a + b
+  end
+end
+```
+
+```elixir
+Math.sum(4, 7)
+```
+
+```elixir
+defmodule Detail do
+  def name(n) do
+    "Hello #{n}"
+  end
+
+  def greeting(n, fun) do
+    fun.(n)
+  end
+end
+```
+
+```elixir
+Detail.greeting("Megha", &Detail.name/1)
+```
+
+```elixir
+defmodule Foo do
+  def greeting(name, complement \\ "Nice to meet you") do
+    "Hello #{name} #{complement}"
+  end
+end
+```
+
+```elixir
+Foo.greeting("Megha")
 ```
 
 ## Pattern
@@ -168,6 +256,30 @@ x = 1
 [^x, 2, 3] = [2, 2, 3]
 ```
 
+```elixir
+%{name: name} = %{name: "Megha", age: 20}
+```
+
+```elixir
+name
+```
+
+## Struct
+
+```elixir
+defmodule Player do
+  defstruct name: "Megha", age: 20
+end
+```
+
+```elixir
+Player.__struct__()
+```
+
+```elixir
+
+```
+
 ## Case condition and if
 
 ```elixir
@@ -175,5 +287,17 @@ case {1, 1, 3} do
   {4, 5, 5} -> "Not match"
   {1, x, 3} -> "match"
   _ -> "invalid"
+end
+```
+
+```elixir
+data = %{name: "Megha", age: 20}
+```
+
+```elixir
+case data do
+  %{name: "Megha"} -> "Hello #{name}"
+  %{age: 34} -> "Not Your Correct Age"
+  %{age: _age} -> "Correct age is 21"
 end
 ```
