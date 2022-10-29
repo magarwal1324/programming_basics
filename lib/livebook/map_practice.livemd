@@ -1,0 +1,133 @@
+# Map in Elixir
+
+## String key version
+
+```elixir
+%{"name" => "megha", "age" => 20}
+```
+
+## Atom key version
+
+```elixir
+%{name: "Megha", age: 20}
+```
+
+```elixir
+%{:name => "Tannu", :age => 20}
+```
+
+## Other key Type
+
+```elixir
+%{
+  1 => "One",
+  2.0 => "Two",
+  "Three" => 3,
+  "Four" => 4,
+  {1, 2, 3} => "One,Two,Three",
+  [1, 2, 3] => "One Two three"
+}
+```
+
+## Nested values
+
+```elixir
+map = %{
+  Name: "Megha",
+  Roll: 165,
+  Dept: "CSE",
+  Sub: %{
+    first_sem: "Physics",
+    sec_sem: "Chem",
+    Thir_sem: "Math",
+    Four_sem: "DSA",
+    Fif_sem: "Java"
+  },
+  College: "AEC"
+}
+```
+
+## Access values in map
+
+```elixir
+Map.get(map, :College)
+```
+
+```elixir
+map[:Name]
+```
+
+## Pattern Matching Of Map
+
+```elixir
+data = %{name: "Megha", roll: 165}
+
+case data do
+  %{name: "Megh"} -> "My name is megha"
+  %{name: name} -> "Hello #{name}"
+  _ -> "Invalid"
+end
+```
+
+```elixir
+data = %{
+  flag: true,
+  name: "Megha",
+  roll: 165,
+  sem: 5,
+  sub: %{a: "Java", b: "compiler design", c: "se", d: "Ai", e: "Hsmc"}
+}
+
+case data do
+  %{flag: false} -> "False"
+  %{flag: true, name: name} -> {"Hello #{name}"}
+end
+```
+
+```elixir
+%{amount: value} = %{name: "Megha Agarwal", amount: 142}
+```
+
+```elixir
+value
+```
+
+```elixir
+%{"name" => _other, "amount" => amount} = %{"name" => "Your Customer, Inc", "amount" => 142}
+```
+
+```elixir
+amount
+```
+
+## Pattern Matching a function body
+
+```elixir
+data=
+```
+
+## Function of Map
+
+```elixir
+Map.put(%{1 => "one", 2 => "two"}, 3, "three")
+```
+
+```elixir
+Map.merge(%{1 => "one", 2 => "two"}, %{3 => "three", 4 => "four"})
+```
+
+```elixir
+Map.to_list(%{1 => "one", 2 => "two"})
+```
+
+```elixir
+Map.values(%{1 => "one", 2 => "two"})
+```
+
+```elixir
+Map.get(%{name: "Megha", roll: 165}, :name)
+```
+
+```elixir
+Map.has_key?(%{name: "Megha", roll: 165}, :id)
+```

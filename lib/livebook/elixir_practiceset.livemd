@@ -137,3 +137,187 @@ Data.find(true)
 ```elixir
 Data.find(false)
 ```
+
+## Tuple Exercise
+
+```elixir
+defmodule Ex1 do
+  def date(_year, _month, day) do
+    day
+  end
+end
+```
+
+```elixir
+Ex1.date(2001, 03, 9)
+```
+
+```elixir
+defmodule Ex2 do
+  def check_tuple({_, _, _}) do
+    "True"
+  end
+
+  def check_tuple(_tuple) do
+    "False"
+  end
+end
+```
+
+```elixir
+Ex2.check_tuple({2, 3, 5})
+```
+
+```elixir
+defmodule Ex3 do
+  def holdays(12) do
+    "Christmas"
+  end
+
+  def holdays(7) do
+    "4th of July"
+  end
+
+  def holdays(1) do
+    "New Years"
+  end
+
+  def holidays(_) do
+    "Invalid"
+  end
+end
+```
+
+```elixir
+Ex3.holdays(1)
+```
+
+```elixir
+defmodule Ex4 do
+  def greeting({:ok, name}) do
+    "Hello #{name}"
+  end
+
+  def greeting({:error, _reason}) do
+    "Can't Greet"
+  end
+end
+```
+
+```elixir
+Ex4.greeting("megha")
+```
+
+```elixir
+
+```
+
+## Map Exercise
+
+```elixir
+web_params = %{"name" => "John", "email" => "john@example.com"}
+
+defmodule Testing do
+  def do_work(params = %{"email" => email}) do
+    IO.inspect(email)
+    IO.inspect(params)
+    "Sent an email to #{email} addressed to #{params["name"]}"
+  end
+end
+```
+
+```elixir
+Testing.do_work(web_params)
+```
+
+```elixir
+param = %{"email" => "magarwal@gmail.com"}
+```
+
+```elixir
+my_param = %{"name" => "Megha", "email" => "magarwal@gmail.com"}
+```
+
+```elixir
+param = my_param
+```
+
+```elixir
+"#{param["name"]}"
+```
+
+```elixir
+defmodule My_data do
+  def name(%{name: name}) do
+    "My name is #{name}"
+  end
+end
+```
+
+```elixir
+My_data.name(%{name: "Megha"})
+```
+
+## List
+
+```elixir
+defmodule My_list do
+  def list([]) do
+    true
+  end
+
+  def list([_value]) do
+    true
+  end
+
+  def list([_ | _value]) do
+    true
+  end
+
+  def list(_value) do
+    false
+  end
+end
+```
+
+```elixir
+My_list.list([6])
+```
+
+```elixir
+My_list.list([6, 6, 7])
+```
+
+## String
+
+```elixir
+defmodule Formatting do
+  def date(<<year::binary-size(4), month::binary-size(2), day::binary-size(2)>>) do
+    "#{day}/#{month}/#{year}"
+  end
+end
+```
+
+```elixir
+Formatting.date("20010309")
+```
+
+```elixir
+defmodule Identify do
+  def check(<<"Hello" <> value>>) do
+    "Hello #{value}"
+  end
+
+  def check(<<"Good" <> value>>) do
+    "Hello #{value}"
+  end
+
+  def check(<<_other>>) do
+    "Invalid"
+  end
+end
+```
+
+```elixir
+Identify.check("Good Morning")
+```
